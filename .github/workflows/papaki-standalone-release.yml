@@ -1,0 +1,104 @@
+name: Build Rusee Papaki Standalone
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rusee-papaki-standalone-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build-release:
+    name: Build verified Linux standalone artifact
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out secret-free source
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Build verified Papaki release
+        shell: bash
+        env:
+          DATABASE_URL: mysql://release_builder:release_builder@127.0.0.1:3306/release_builder
+          APP_URL: https://rusee.gr
+          ENABLE_FAKE_PAYMENTS: "false"
+          MAINTENANCE_MODE: "false"
+        run: |
+          set -Eeuo pipefail
+          chmod +x scripts/build-papaki-linux-release.sh
+          scripts/build-papaki-linux-release.sh "github-${GITHUB_RUN_NUMBER}"
+
+      - name: Verify archive and checksum
+        id: release
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+
+          mapfile -t archives < <(find tmp -maxdepth 1 -type f -name 'rusee-papaki-standalone-github-*.tar.gz' -print | sort)
+          if [[ "${#archives[@]}" -ne 1 ]]; then
+            echo "Expected exactly one Rusee standalone archive; found ${#archives[@]}." >&2
+            exit 1
+          fi
+
+          archive="${archives[0]}"
+          checksum="${archive}.sha256"
+          [[ -f "$checksum" ]] || { echo "Missing checksum: $checksum" >&2; exit 1; }
+
+          (
+            cd tmp
+            sha256sum -c "$(basename "$checksum")"
+          )
+
+          listing="$(mktemp)"
+          trap 'rm -f -- "$listing"' EXIT
+          tar -tzf "$archive" > "$listing"
+
+          required_paths=(
+            "./start.js"
+            "./.next/standalone/server.js"
+            "./.next/standalone/.next/BUILD_ID"
+            "./.next/standalone/.next/static/"
+            "./.next/standalone/public/"
+            "./.next/standalone/public/kimono_images_optimized/kimono-home-group-dance.mp4"
+            "./.next/standalone/public/kimono_images_optimized/kimono_design_grouped_1.webp"
+            "./RELEASE_MANIFEST.txt"
+          )
+
+          for required_path in "${required_paths[@]}"; do
+            if ! grep -Fqx "$required_path" "$listing"; then
+              echo "Release archive is missing required path: $required_path" >&2
+              exit 1
+            fi
+          done
+
+          if grep -E '(^|/)\.env($|\.)|(^|/)next_kimono\.sql$|(^|/)node_modules/@next/swc-|(^|/)artifacts/' "$listing"; then
+            echo "Release archive contains a forbidden environment, database, artifact, or native SWC path." >&2
+            exit 1
+          fi
+
+          echo "Archive structure and checksum: PASS"
+          echo "archive=$archive" >> "$GITHUB_OUTPUT"
+          echo "checksum=$checksum" >> "$GITHUB_OUTPUT"
+
+      - name: Upload Rusee Papaki artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rusee-papaki-standalone-${{ github.run_number }}-${{ github.sha }}
+          path: |
+            ${{ steps.release.outputs.archive }}
+            ${{ steps.release.outputs.checksum }}
+          if-no-files-found: error
+          retention-days: 7

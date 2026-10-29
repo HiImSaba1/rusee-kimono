@@ -42,6 +42,22 @@ describe("Papaki/Plesk release contract", () => {
     expect(deploy).toContain("npm run build");
   });
 
+  it("builds a secret-free Linux artifact with a checksum in GitHub Actions", () => {
+    const workflow = read(".github/workflows/papaki-standalone-release.yml");
+    const builder = read("scripts/build-papaki-linux-release.sh");
+    expect(workflow).toContain('node-version: "22"');
+    expect(workflow).toContain("actions/upload-artifact@v4");
+    expect(workflow).toContain("sha256sum -c");
+    expect(workflow).toContain("kimono-home-group-dance.mp4");
+    expect(workflow).toContain("next_kimono\\.sql");
+    expect(builder).toContain("npm ci --legacy-peer-deps");
+    expect(builder).toContain("npm run build:plesk");
+    expect(builder).toContain('export NODE_ENV=production');
+    expect(builder).toContain("RELEASE_MANIFEST.txt");
+    expect(builder).toContain("sha256sum");
+    expect(builder).not.toContain(".env.production.local");
+  });
+
   it("packages only reviewed application inputs and never environment files", () => {
     const packager = read("scripts/prepare-papaki-upload.ps1");
     expect(packager).toContain('"drizzle", "public", "src"');
