@@ -1,0 +1,1 @@
+ALTER TABLE `email_deliveries` MODIFY COLUMN `template` enum('payment_confirmation','admin_new_order','fulfilment_update','contact_enquiry_notification','admin_return_request','return_status_update') NOT NULL;

@@ -1,26 +1,328 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --paper: #f2f0e9;
+  --paper-deep: #708a9c;
+  --paper-deep-foreground: #f2f0e9;
+  --ink: #171714;
+  --clay: #c8b19c;
+  --sage: #8c927b;
+  --line: rgb(23 23 20 / 18%);
+  --gutter: clamp(1rem, 3vw, 3rem);
+  --section: clamp(5rem, 11vw, 11rem);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-paper: var(--paper);
+  --color-paper-deep: var(--paper-deep);
+  --color-ink: var(--ink);
+  --color-clay: var(--clay);
+  --color-sage: var(--sage);
+  --font-sans: "Bricolage Grotesque Variable", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Courier New", monospace;
+  --font-display: "Cormorant Garamond", Georgia, serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* { box-sizing: border-box; }
+html { max-width: 100%; overflow-x: clip; background: var(--ink); color: var(--ink); scroll-behavior: auto; }
+body { min-width: 320px; overflow-x: clip; background: var(--ink); font-family: "Bricolage Grotesque Variable", "Helvetica Neue", Arial, sans-serif; text-rendering: optimizeLegibility; }
+html, body { scrollbar-width: none; -ms-overflow-style: none; }
+html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; height: 0; }
+html[lang="el"] .font-display { font-family: "Times New Roman", Times, serif; }
+a, button { -webkit-tap-highlight-color: transparent; }
+button, input, textarea { font: inherit; }
+
+/* Public text buttons share the cookie-banner ink-to-sage wipe. Icon-only
+   controls keep their compact interaction and admin controls remain isolated. */
+[data-public-site] button:not([aria-label]):not([data-structural-control]),
+[data-public-site] a[class*="px-"][class*="uppercase"]:not([data-structural-control]),
+[data-button-reveal] {
+  align-items: center;
+  background-color: var(--ink) !important;
+  background-image: linear-gradient(var(--paper-deep), var(--paper-deep));
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 0 100%;
+  border-color: var(--ink) !important;
+  border-radius: 999px;
+  color: var(--paper) !important;
+  display: inline-flex;
+  gap: .65rem;
+  justify-content: center;
+  letter-spacing: .12em;
+  min-height: 2.75rem;
+  overflow: hidden;
+  padding: .9rem 1.4rem;
+  text-transform: uppercase;
+  transition: background-size .7s cubic-bezier(.16, 1, .3, 1), color .45s ease, border-color .45s ease;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+[data-public-site] button:not([aria-label]):not([data-structural-control]):not(:disabled):is(:hover, :focus-visible),
+[data-public-site] a[class*="px-"][class*="uppercase"]:not([data-structural-control]):is(:hover, :focus-visible),
+[data-button-reveal]:not(:disabled):is(:hover, :focus-visible) {
+  background-size: 100% 100%;
+  border-color: var(--paper-deep) !important;
+  color: var(--ink) !important;
+}
+
+.carousel-design-cta {
+  color: var(--ink) !important;
+}
+
+/* Product purchase controls and the checkout action deliberately use a
+   paper-white reveal instead of the public site's blue button wipe. */
+[data-public-site] button[data-product-add],
+[data-public-site] button[data-checkout-payment],
+[data-public-site] a[data-checkout-action],
+[data-product-size] {
+  background-image: linear-gradient(var(--paper), var(--paper)) !important;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 0 100% !important;
+  transition: background-size .7s cubic-bezier(.16, 1, .3, 1), color .45s ease, border-color .45s ease;
+}
+
+[data-public-site] button[data-product-add]:not(:disabled):is(:hover, :focus-visible),
+[data-public-site] button[data-checkout-payment]:not(:disabled):is(:hover, :focus-visible),
+[data-public-site] a[data-checkout-action]:is(:hover, :focus-visible),
+[data-product-size]:not(:disabled):is(:hover, :focus-visible) {
+  background-size: 100% 100% !important;
+  border-color: var(--ink) !important;
+  color: var(--ink) !important;
+}
+
+[data-billing-document-option] {
+  align-items: center;
+  background-image: linear-gradient(var(--paper-deep), var(--paper-deep));
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 0 100%;
+  border-radius: 999px;
+  display: flex;
+  justify-content: center;
+  min-height: 4rem;
+  transition: background-size .7s cubic-bezier(.16, 1, .3, 1), color .45s ease, border-color .45s ease;
+}
+
+[data-billing-document-option]:is(:hover, :focus-within) {
+  background-size: 100% 100%;
+  border-color: var(--paper-deep) !important;
+  color: var(--ink) !important;
+}
+
+[data-header-control] {
+  background-color: var(--ink) !important;
+  background-image: linear-gradient(var(--paper), var(--paper));
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 0 100%;
+  border: 1px solid var(--ink) !important;
+  border-radius: 999px;
+  color: var(--paper) !important;
+  min-height: 2.75rem;
+  padding-inline: 1.35rem !important;
+  transition: background-size .7s cubic-bezier(.16, 1, .3, 1), color .45s ease, border-color .45s ease;
+}
+
+[data-header-control]:is(:hover, :focus-visible) {
+  background-size: 100% 100%;
+  border-color: var(--ink) !important;
+  color: var(--ink) !important;
+}
+
+:where(form label):has(:is(input, select, textarea):required)::before {
+  content: "*";
+  display: inline-block;
+  margin-inline-end: 0.35em;
+  color: #9b2f25;
+  font-weight: 700;
+  line-height: 1;
+}
+.admin-login-username { font-size: clamp(18px, 1.5vw, 22px); }
+.admin-login-password { font-size: clamp(24px, 2vw, 32px); }
+:where(a, button, input, select, textarea):focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+::selection { background: var(--ink); color: var(--paper); }
+footer ::selection { background: var(--paper); color: var(--ink); }
+
+html[data-route-ready="false"] [data-site-footer] {
+  visibility: hidden;
+}
+
+.eyebrow { font-family: "Courier New", monospace; font-size: clamp(0.82rem, 0.78rem + 0.16vw, 0.92rem); line-height: 1.25; letter-spacing: 0.09em; text-transform: uppercase; }
+[data-cart-page] .eyebrow { font-size: clamp(.95rem, .9rem + .16vw, 1.05rem); }
+.section-shell { padding: var(--section) var(--gutter); }
+.editorial-rule { border-color: var(--line); }
+
+/* The former warm-yellow secondary surface is now the Ruseè editorial
+   blue-grey. Paper becomes its foreground so every shared surface keeps a
+   consistent, accessible light-on-dark relationship without one-off colours. */
+:where([class~="bg-paper-deep"]) {
+  color: var(--paper-deep-foreground);
+}
+
+:where([class~="bg-paper-deep"])[class*="text-ink/"],
+:where([class~="bg-paper-deep"]) :where([class*="text-ink/"]) {
+  color: color-mix(in srgb, var(--paper-deep-foreground) 72%, transparent) !important;
+}
+
+:where([class~="bg-paper-deep"])[class~="text-ink"],
+:where([class~="bg-paper-deep"]) :where([class~="text-ink"]) {
+  color: var(--paper-deep-foreground) !important;
+}
+
+/* The handbook is a dense reading surface. Keep its cards paper/ink even
+   though the global paper-deep token is the editorial blue-grey accent. */
+[data-testid="admin-guide"] [data-testid="guide-section"] {
+  background-color: var(--paper);
+  color: var(--ink);
+}
+
+[data-testid="admin-guide"] [data-testid="guide-section"] :where([class*="text-ink/"]) {
+  color: color-mix(in srgb, var(--ink) 78%, transparent) !important;
+}
+
+[data-testid="admin-guide"] [data-testid="guide-section"] :where([class~="text-ink"]) {
+  color: var(--ink) !important;
+}
+
+/* A light editorial panel can sit inside the blue-grey surface. It establishes
+   a fresh ink context instead of inheriting the outer light foreground. */
+[data-about-services-list] {
+  color: var(--ink) !important;
+}
+
+[data-about-services-list] :where([class*="text-ink/"]) {
+  color: color-mix(in srgb, var(--ink) 72%, transparent) !important;
+}
+
+[data-about-services-list] :where([class~="text-paper"]) {
+  color: var(--paper) !important;
+}
+.image-zoom { transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+.group:hover .image-zoom { transform: scale(1.035); }
+
+/* Product-card alternate view: reveal the second photograph as one continuous
+   editorial mask, with the first image always retained underneath. */
+.shop-design-card__primary,
+.shop-design-card__alternate-image {
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.shop-design-card__alternate {
+  clip-path: inset(0 100% 0 0);
+  backface-visibility: hidden;
+  contain: paint;
+  transform: translateZ(0);
+  will-change: clip-path;
+  transition: clip-path 0.7s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.shop-design-card__alternate-image {
+  transform: scale(1.4);
+}
+
+.shop-design-card:hover .shop-design-card__primary,
+.shop-design-card:focus-visible .shop-design-card__primary {
+  transform: scale(1.015);
+}
+
+.shop-design-card:hover .shop-design-card__alternate,
+.shop-design-card:focus-visible .shop-design-card__alternate {
+  clip-path: inset(0 0 0 0);
+}
+
+.shop-design-card:hover .shop-design-card__alternate-image,
+.shop-design-card:focus-visible .shop-design-card__alternate-image {
+  transform: scale(1);
+}
+
+/* Leave room for display-face accents, including the è in Ruseè. */
+:where(h1, h2, h3).font-display,
+[data-split-text] {
+  overflow: visible;
+  padding-block: 0.12em;
+}
+
+/* Editorial scale: expressive without overwhelming laptop or mobile layouts. */
+:where(h1.font-display) {
+  font-size: clamp(3rem, 6.6vw, 7rem) !important;
+  line-height: 0.88 !important;
+  letter-spacing: -0.052em !important;
+}
+
+:where(h2.font-display) {
+  font-size: clamp(2.2rem, 4.2vw, 4.6rem) !important;
+  line-height: 0.94 !important;
+  letter-spacing: -0.038em !important;
+}
+
+:where(h3.font-display) {
+  font-size: clamp(1.8rem, 2.8vw, 3.15rem) !important;
+  line-height: 1 !important;
+}
+
+/* Greek display copy is wider than the English serif face. Keep translated
+   headings editorial without allowing long uppercase words to leave the viewport. */
+html[lang="el"] :where(h1.font-display) {
+  font-size: clamp(2.65rem, 5.35vw, 5.75rem) !important;
+  line-height: 0.94 !important;
+  letter-spacing: -0.042em !important;
+}
+
+html[lang="el"] :where(h2.font-display) {
+  font-size: clamp(2rem, 3.55vw, 4rem) !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.03em !important;
+}
+
+html[lang="el"] :where(h3.font-display) {
+  font-size: clamp(1.65rem, 2.35vw, 2.75rem) !important;
+  line-height: 1.04 !important;
+}
+
+html[lang="el"] .greek-display-heading {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  font-size: clamp(2.25rem, 8vw, 6.5rem) !important;
+  line-height: 0.96 !important;
+  letter-spacing: -0.028em !important;
+}
+
+/* Admin menu cards need a compact scale even though their labels use the display face. */
+[data-admin-menu-title] {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  font-size: clamp(1.35rem, 1.15rem + 0.65vw, 1.9rem) !important;
+  line-height: 1.08 !important;
+}
+
+html[lang="el"] [data-admin-menu-title] {
+  font-size: clamp(1.05rem, 0.96rem + 0.42vw, 1.45rem) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.015em !important;
+}
+
+/* Previously sub-10px metadata was difficult to scan, especially in the admin. */
+:where(
+  [class~="text-[.58rem]"], [class~="text-[.6rem]"], [class~="text-[.62rem]"], [class~="text-[.65rem]"],
+  [class~="text-[0.58rem]"], [class~="text-[0.6rem]"], [class~="text-[0.62rem]"], [class~="text-[0.65rem]"],
+  [class~="text-[0.68rem]"]
+) {
+  font-size: clamp(0.74rem, 0.71rem + 0.12vw, 0.8rem) !important;
+  line-height: 1.35;
+}
+
+:where(label, legend, dt, th).text-xs { font-size: clamp(0.78rem, 0.75rem + 0.1vw, 0.84rem); line-height: 1.35; }
+
+[class*="page-curtain-line"] {
+  margin-block: -0.12em;
+  padding-block: 0.12em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+}
+/* Product editorial imagery must remain fully visible on wide screens. */
+[data-knowledge-image] img {
+  object-fit: contain;
 }

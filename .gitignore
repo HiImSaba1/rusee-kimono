@@ -12,9 +12,15 @@
 
 # testing
 /coverage
+/artifacts/
+
+# project-local tools
+/.tools/
 
 # next.js
 /.next/
+/.next-playwright/
+/.next-performance/
 /out/
 
 # production
@@ -29,9 +35,15 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+results.txt
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+!.env.production.example
+
+# sensitive local database snapshots
+/next_kimono.sql
 
 # vercel
 .vercel

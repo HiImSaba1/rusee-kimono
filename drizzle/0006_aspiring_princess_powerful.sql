@@ -1,0 +1,1 @@
+ALTER TABLE `products` ADD `product_information` json;

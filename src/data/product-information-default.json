@@ -1,0 +1,42 @@
+{
+  "fabric": {
+    "el": "Ελαφρύ υφαντό ύφασμα με απαλή αίσθηση και ρευστή πτώση. Η ακριβής σύνθεση ινών θα προστεθεί μόλις επιβεβαιωθεί από την τελική ετικέτα παραγωγής.",
+    "en": "A lightweight woven fabric with a soft hand and fluid drape. The exact fibre composition will be added once confirmed against the final production label."
+  },
+  "feel": {
+    "el": "Ανάλαφρη, μη δομημένη αίσθηση που ακολουθεί την κίνηση και φοριέται εύκολα ως επιπλέον στρώση.",
+    "en": "A light, unstructured feel that follows the body in motion and works easily as an additional layer."
+  },
+  "fit": {
+    "el": "Χαλαρή γραμμή κιμονό, σχεδιασμένη να φοριέται ανοιχτή. Επιλέξτε μέγεθος με βάση την άνεση και την επιθυμητή επικάλυψη, όχι εφαρμογή τύπου σακακιού.",
+    "en": "A relaxed kimono silhouette designed to be worn open. Choose by preferred ease and coverage rather than a tailored-jacket fit."
+  },
+  "measurements": {
+    "el": "Οι τελικές μετρήσεις ενδύματος ανά μέγεθος — στήθος, μήκος, άνοιγμα μανικιού και περίμετρος — πρέπει να επιβεβαιωθούν πριν από την κυκλοφορία. Επικοινωνήστε με το studio για βοήθεια μεγέθους.",
+    "en": "Final garment measurements by size—chest, length, sleeve opening and sweep—must be confirmed before launch. Contact the studio for sizing help in the meantime."
+  },
+  "construction": {
+    "el": "Μαλακή, μη δομημένη κατασκευή με έμφαση στην πτώση του υφάσματος. Οι τελικές λεπτομέρειες ραφής, ζώνης και τελειωμάτων θα καταγραφούν μετά την έγκριση του δείγματος παραγωγής.",
+    "en": "Soft, unstructured construction led by the fabric’s drape. Final seam, belt and finishing details will be documented after the production sample is approved."
+  },
+  "opacity": {
+    "el": "Η διαφάνεια μπορεί να αλλάζει ανά σχέδιο, χρώμα και φωτισμό. Για πλήρη κάλυψη προτείνεται δοκιμή στο φυσικό φως και συνδυασμός με κατάλληλη εσωτερική στρώση.",
+    "en": "Opacity can vary by print, colour and light. For full coverage, assess the piece in natural light and combine it with an appropriate base layer."
+  },
+  "care": {
+    "el": "Προσωρινή οδηγία μέχρι να ολοκληρωθεί η δοκιμή φροντίδας: απαλό πλύσιμο σε δροσερό νερό με ήπιο απορρυπαντικό, χωρίς λευκαντικό, χωρίς στεγνωτήριο, φυσικό στέγνωμα στη σκιά και ατμός ή σίδερο σε χαμηλή θερμοκρασία. Ακολουθείτε πάντα την ετικέτα του τελικού ενδύματος.",
+    "en": "Provisional guidance until care testing is complete: cool gentle wash with mild detergent, no bleach, no tumble drying, dry naturally in shade, and steam or iron on low. Always follow the final garment label."
+  },
+  "provenance": {
+    "el": "Σχεδιασμένο από τη Ruseè στην Ελλάδα. Η χώρα κατασκευής, η προέλευση του υφάσματος και τα στοιχεία του εργαστηρίου θα δημοσιευτούν όταν επιβεβαιωθούν.",
+    "en": "Designed by Ruseè in Greece. Country of manufacture, fabric origin and workshop details will be published when confirmed."
+  },
+  "packaging": {
+    "el": "Η συσκευασία θα προστατεύει το ένδυμα κατά τη μεταφορά. Τα τελικά υλικά συσκευασίας και οι οδηγίες ανακύκλωσης θα ανακοινωθούν πριν από την κυκλοφορία.",
+    "en": "Packaging will protect the garment in transit. Final packaging materials and recycling guidance will be published before launch."
+  },
+  "shippingReturns": {
+    "el": "Ο χρόνος αποστολής, το κόστος και το δικαίωμα επιστροφής εμφανίζονται πριν από την πληρωμή. Δείτε τις σελίδες Αποστολών και Επιστροφών για τους ισχύοντες όρους.",
+    "en": "Dispatch timing, cost and return eligibility are shown before payment. See Shipping and Returns for the current terms."
+  }
+}

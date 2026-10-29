@@ -1,0 +1,605 @@
+[
+  {
+    "source": "kimono_design_artemis_main.png",
+    "output": "kimono_design_artemis_main.png",
+    "bytes": 387178,
+    "fallback": true
+  },
+  {
+    "source": "kimono_design_birds_1.jpg",
+    "output": "kimono_design_birds_1.webp",
+    "bytes": 379396
+  },
+  {
+    "source": "kimono_design_birds_2.jpg",
+    "output": "kimono_design_birds_2.webp",
+    "bytes": 367332
+  },
+  {
+    "source": "kimono_design_birds_3.jpg",
+    "output": "kimono_design_birds_3.webp",
+    "bytes": 344216
+  },
+  {
+    "source": "kimono_design_birds_4.jpg",
+    "output": "kimono_design_birds_4.webp",
+    "bytes": 344698
+  },
+  {
+    "source": "kimono_design_birds_5.jpg",
+    "output": "kimono_design_birds_5.webp",
+    "bytes": 421030
+  },
+  {
+    "source": "kimono_design_birds_6.jpg",
+    "output": "kimono_design_birds_6.webp",
+    "bytes": 312832
+  },
+  {
+    "source": "kimono_design_birds_7.jpg",
+    "output": "kimono_design_birds_7.webp",
+    "bytes": 332904
+  },
+  {
+    "source": "kimono_design_birds_8.jpg",
+    "output": "kimono_design_birds_8.webp",
+    "bytes": 361516
+  },
+  {
+    "source": "kimono_design_birds_9.jpg",
+    "output": "kimono_design_birds_9.webp",
+    "bytes": 298588
+  },
+  {
+    "source": "kimono_design_birds_10.jpg",
+    "output": "kimono_design_birds_10.webp",
+    "bytes": 372868
+  },
+  {
+    "source": "kimono_design_birds_main.png",
+    "output": "kimono_design_birds_main.png",
+    "bytes": 541214,
+    "fallback": true
+  },
+  {
+    "source": "kimono_design_circles_bluebelt_main.png",
+    "output": "kimono_design_circles_bluebelt_main.png",
+    "bytes": 385370,
+    "fallback": true
+  },
+  {
+    "source": "kimono_design_circles_lightbelt_1.jpg",
+    "output": "kimono_design_circles_lightbelt_1.webp",
+    "bytes": 331042
+  },
+  {
+    "source": "kimono_design_circles_lightbelt_main.png",
+    "output": "kimono_design_circles_lightbelt_main.png",
+    "bytes": 392795,
+    "fallback": true
+  },
+  {
+    "source": "kimono_design_drops_1.jpg",
+    "output": "kimono_design_drops_1.webp",
+    "bytes": 269566
+  },
+  {
+    "source": "kimono_design_drops_2.jpg",
+    "output": "kimono_design_drops_2.webp",
+    "bytes": 260854
+  },
+  {
+    "source": "kimono_design_drops_3.jpg",
+    "output": "kimono_design_drops_3.webp",
+    "bytes": 263022
+  },
+  {
+    "source": "kimono_design_drops_4.jpg",
+    "output": "kimono_design_drops_4.webp",
+    "bytes": 354096
+  },
+  {
+    "source": "kimono_design_drops_5.jpg",
+    "output": "kimono_design_drops_5.webp",
+    "bytes": 276112
+  },
+  {
+    "source": "kimono_design_drops_6.jpg",
+    "output": "kimono_design_drops_6.webp",
+    "bytes": 298124
+  },
+  {
+    "source": "kimono_design_drops_7.jpg",
+    "output": "kimono_design_drops_7.webp",
+    "bytes": 319754
+  },
+  {
+    "source": "kimono_design_drops_8.jpg",
+    "output": "kimono_design_drops_8.webp",
+    "bytes": 334118
+  },
+  {
+    "source": "kimono_design_drops_9.jpg",
+    "output": "kimono_design_drops_9.webp",
+    "bytes": 304030
+  },
+  {
+    "source": "kimono_design_drops_10.jpg",
+    "output": "kimono_design_drops_10.webp",
+    "bytes": 261576
+  },
+  {
+    "source": "kimono_design_drops_11.jpg",
+    "output": "kimono_design_drops_11.webp",
+    "bytes": 264546
+  },
+  {
+    "source": "kimono_design_drops_main.png",
+    "output": "kimono_design_drops_main.png",
+    "bytes": 262837,
+    "fallback": true
+  },
+  {
+    "source": "kimono_design_eyes_1.jpg",
+    "output": "kimono_design_eyes_1.webp",
+    "bytes": 366220
+  },
+  {
+    "source": "kimono_design_eyes_2.jpg",
+    "output": "kimono_design_eyes_2.webp",
+    "bytes": 449988
+  },
+  {
+    "source": "kimono_design_eyes_3.jpg",
+    "output": "kimono_design_eyes_3.webp",
+    "bytes": 355062
+  },
+  {
+    "source": "kimono_design_eyes_main.png",
+    "output": "kimono_design_eyes_main.png",
+    "bytes": 270700,
+    "fallback": true
+  },
+  {
+    "source": "kimono_design_figs_1.jpg",
+    "output": "kimono_design_figs_1.webp",
+    "bytes": 373152
+  },
+  {
+    "source": "kimono_design_figs_2.jpg",
+    "output": "kimono_design_figs_2.webp",
+    "bytes": 452900
+  },
+  {
+    "source": "kimono_design_figs_3.jpg",
+    "output": "kimono_design_figs_3.webp",
+    "bytes": 423000
+  },
+  {
+    "source": "kimono_design_figs_4.jpg",
+    "output": "kimono_design_figs_4.webp",
+    "bytes": 433690
+  },
+  {
+    "source": "kimono_design_figs_5.jpg",
+    "output": "kimono_design_figs_5.webp",
+    "bytes": 305268
+  },
+  {
+    "source": "kimono_design_figs_6.jpg",
+    "output": "kimono_design_figs_6.webp",
+    "bytes": 390854
+  },
+  {
+    "source": "kimono_design_figs_7.jpg",
+    "output": "kimono_design_figs_7.webp",
+    "bytes": 366462
+  },
+  {
+    "source": "kimono_design_figs_8.jpg",
+    "output": "kimono_design_figs_8.webp",
+    "bytes": 378656
+  },
+  {
+    "source": "kimono_design_figs_main.png",
+    "output": "kimono_design_figs_main.png",
+    "bytes": 252878,
+    "fallback": true
+  },
+  {
+    "source": "kimono_design_grouped_1.jpg",
+    "output": "kimono_design_grouped_1.webp",
+    "bytes": 342342
+  },
+  {
+    "source": "kimono_design_grouped_2.jpg",
+    "output": "kimono_design_grouped_2.webp",
+    "bytes": 370482
+  },
+  {
+    "source": "kimono_design_lily_pond_1.jpg",
+    "output": "kimono_design_lily_pond_1.webp",
+    "bytes": 394004
+  },
+  {
+    "source": "kimono_design_lily_pond_2.jpg",
+    "output": "kimono_design_lily_pond_2.webp",
+    "bytes": 372962
+  },
+  {
+    "source": "kimono_design_lily_pond_3.jpg",
+    "output": "kimono_design_lily_pond_3.webp",
+    "bytes": 353042
+  },
+  {
+    "source": "kimono_design_lily_pond_4.jpg",
+    "output": "kimono_design_lily_pond_4.webp",
+    "bytes": 355166
+  },
+  {
+    "source": "kimono_design_lily_pond_5.jpg",
+    "output": "kimono_design_lily_pond_5.webp",
+    "bytes": 315832
+  },
+  {
+    "source": "kimono_design_lily_pond_6.jpg",
+    "output": "kimono_design_lily_pond_6.webp",
+    "bytes": 268548
+  },
+  {
+    "source": "kimono_design_lily_pond_7.jpg",
+    "output": "kimono_design_lily_pond_7.webp",
+    "bytes": 228966
+  },
+  {
+    "source": "kimono_design_lily_pond_8.jpg",
+    "output": "kimono_design_lily_pond_8.webp",
+    "bytes": 256240
+  },
+  {
+    "source": "kimono_design_lily_pond_9.jpg",
+    "output": "kimono_design_lily_pond_9.webp",
+    "bytes": 385348
+  },
+  {
+    "source": "kimono_design_lily_pond_10.jpg",
+    "output": "kimono_design_lily_pond_10.webp",
+    "bytes": 302826
+  },
+  {
+    "source": "kimono_design_lily_pond_11.jpg",
+    "output": "kimono_design_lily_pond_11.webp",
+    "bytes": 288826
+  },
+  {
+    "source": "kimono_design_lily_pond_12.jpg",
+    "output": "kimono_design_lily_pond_12.webp",
+    "bytes": 392658
+  },
+  {
+    "source": "kimono_design_lily_pond_13.jpg",
+    "output": "kimono_design_lily_pond_13.webp",
+    "bytes": 363286
+  },
+  {
+    "source": "kimono_design_lily_pond_14.jpg",
+    "output": "kimono_design_lily_pond_14.webp",
+    "bytes": 473462
+  },
+  {
+    "source": "kimono_design_lily_pond_15.jpg",
+    "output": "kimono_design_lily_pond_15.webp",
+    "bytes": 358604
+  },
+  {
+    "source": "kimono_design_lily_pond_16.jpg",
+    "output": "kimono_design_lily_pond_16.webp",
+    "bytes": 445032
+  },
+  {
+    "source": "kimono_design_lily_pond_17.jpg",
+    "output": "kimono_design_lily_pond_17.webp",
+    "bytes": 303178
+  },
+  {
+    "source": "kimono_design_lily_pond_18.jpg",
+    "output": "kimono_design_lily_pond_18.webp",
+    "bytes": 303178
+  },
+  {
+    "source": "kimono_design_lily_pond_main.png",
+    "output": "kimono_design_lily_pond_main.png",
+    "bytes": 266944,
+    "fallback": true
+  },
+  {
+    "source": "kimono_design_liquid_geo_1.jpg",
+    "output": "kimono_design_liquid_geo_1.webp",
+    "bytes": 302284
+  },
+  {
+    "source": "kimono_design_liquid_geo_2.jpg",
+    "output": "kimono_design_liquid_geo_2.webp",
+    "bytes": 373864
+  },
+  {
+    "source": "kimono_design_liquid_geo_3.jpg",
+    "output": "kimono_design_liquid_geo_3.webp",
+    "bytes": 338246
+  },
+  {
+    "source": "kimono_design_liquid_geo_4.jpg",
+    "output": "kimono_design_liquid_geo_4.webp",
+    "bytes": 352478
+  },
+  {
+    "source": "kimono_design_liquid_geo_5.jpg",
+    "output": "kimono_design_liquid_geo_5.webp",
+    "bytes": 313426
+  },
+  {
+    "source": "kimono_design_liquid_geo_6.jpg",
+    "output": "kimono_design_liquid_geo_6.webp",
+    "bytes": 331642
+  },
+  {
+    "source": "kimono_design_liquid_geo_7.jpg",
+    "output": "kimono_design_liquid_geo_7.webp",
+    "bytes": 392952
+  },
+  {
+    "source": "kimono_design_liquid_geo_8.jpg",
+    "output": "kimono_design_liquid_geo_8.webp",
+    "bytes": 374482
+  },
+  {
+    "source": "kimono_design_liquid_geo_9.jpg",
+    "output": "kimono_design_liquid_geo_9.webp",
+    "bytes": 310096
+  },
+  {
+    "source": "kimono_design_liquid_geo_10.jpg",
+    "output": "kimono_design_liquid_geo_10.webp",
+    "bytes": 332060
+  },
+  {
+    "source": "kimono_design_liquid_geo_main.png",
+    "output": "kimono_design_liquid_geo_main.png",
+    "bytes": 432177,
+    "fallback": true
+  },
+  {
+    "source": "kimono_design_neon_shapes_1.jpg",
+    "output": "kimono_design_neon_shapes_1.webp",
+    "bytes": 347568
+  },
+  {
+    "source": "kimono_design_neon_shapes_2.jpg",
+    "output": "kimono_design_neon_shapes_2.webp",
+    "bytes": 371472
+  },
+  {
+    "source": "kimono_design_neon_shapes_3.jpg",
+    "output": "kimono_design_neon_shapes_3.webp",
+    "bytes": 379966
+  },
+  {
+    "source": "kimono_design_neon_shapes_4.jpg",
+    "output": "kimono_design_neon_shapes_4.webp",
+    "bytes": 361668
+  },
+  {
+    "source": "kimono_design_neon_shapes_5.jpg",
+    "output": "kimono_design_neon_shapes_5.webp",
+    "bytes": 414496
+  },
+  {
+    "source": "kimono_design_neon_shapes_6.jpg",
+    "output": "kimono_design_neon_shapes_6.webp",
+    "bytes": 410172
+  },
+  {
+    "source": "kimono_design_neon_shapes_7.jpg",
+    "output": "kimono_design_neon_shapes_7.webp",
+    "bytes": 405586
+  },
+  {
+    "source": "kimono_design_neon_shapes_8.jpg",
+    "output": "kimono_design_neon_shapes_8.webp",
+    "bytes": 389126
+  },
+  {
+    "source": "kimono_design_neon_shapes_9.jpg",
+    "output": "kimono_design_neon_shapes_9.webp",
+    "bytes": 379966
+  },
+  {
+    "source": "kimono_design_neon_shapes_10.jpg",
+    "output": "kimono_design_neon_shapes_10.webp",
+    "bytes": 380516
+  },
+  {
+    "source": "kimono_design_neon_shapes_11.jpg",
+    "output": "kimono_design_neon_shapes_11.webp",
+    "bytes": 392512
+  },
+  {
+    "source": "kimono_design_neon_shapes_12.jpg",
+    "output": "kimono_design_neon_shapes_12.webp",
+    "bytes": 356042
+  },
+  {
+    "source": "kimono_design_neon_shapes_main.png",
+    "output": "kimono_design_neon_shapes_main.png",
+    "bytes": 295741,
+    "fallback": true
+  },
+  {
+    "source": "kimono_design_nordic flowers_1.jpg",
+    "output": "kimono_design_nordic flowers_1.webp",
+    "bytes": 428696
+  },
+  {
+    "source": "kimono_design_nordic flowers_2.jpg",
+    "output": "kimono_design_nordic flowers_2.webp",
+    "bytes": 372104
+  },
+  {
+    "source": "kimono_design_nordic flowers_3.jpg",
+    "output": "kimono_design_nordic flowers_3.webp",
+    "bytes": 358658
+  },
+  {
+    "source": "kimono_design_nordic flowers_4.jpg",
+    "output": "kimono_design_nordic flowers_4.webp",
+    "bytes": 364658
+  },
+  {
+    "source": "kimono_design_nordic flowers_5.jpg",
+    "output": "kimono_design_nordic flowers_5.webp",
+    "bytes": 392918
+  },
+  {
+    "source": "kimono_design_nordic flowers_6.jpg",
+    "output": "kimono_design_nordic flowers_6.webp",
+    "bytes": 379092
+  },
+  {
+    "source": "kimono_design_nordic flowers_7.jpg",
+    "output": "kimono_design_nordic flowers_7.webp",
+    "bytes": 387842
+  },
+  {
+    "source": "kimono_design_nordic flowers_8.jpg",
+    "output": "kimono_design_nordic flowers_8.webp",
+    "bytes": 457534
+  },
+  {
+    "source": "kimono_design_nordic flowers_main.png",
+    "output": "kimono_design_nordic flowers_main.png",
+    "bytes": 260236,
+    "fallback": true
+  },
+  {
+    "source": "kimono_design_pomegranate_1.jpg",
+    "output": "kimono_design_pomegranate_1.webp",
+    "bytes": 462658
+  },
+  {
+    "source": "kimono_design_pomegranate_2.jpg",
+    "output": "kimono_design_pomegranate_2.webp",
+    "bytes": 370228
+  },
+  {
+    "source": "kimono_design_pomegranate.jpg",
+    "output": "kimono_design_pomegranate.webp",
+    "bytes": 348704
+  },
+  {
+    "source": "kimono_design_rhobus_1.jpg",
+    "output": "kimono_design_rhobus_1.webp",
+    "bytes": 377532
+  },
+  {
+    "source": "kimono_design_rhobus_2.jpg",
+    "output": "kimono_design_rhobus_2.webp",
+    "bytes": 384642
+  },
+  {
+    "source": "kimono_design_rhobus_main.jpg",
+    "output": "kimono_design_rhobus_main.webp",
+    "bytes": 278052
+  },
+  {
+    "source": "kimono_design_seabed_1.jpg",
+    "output": "kimono_design_seabed_1.webp",
+    "bytes": 310274
+  },
+  {
+    "source": "kimono_design_seabed_2.jpg",
+    "output": "kimono_design_seabed_2.webp",
+    "bytes": 305544
+  },
+  {
+    "source": "kimono_design_seabed_3.jpg",
+    "output": "kimono_design_seabed_3.webp",
+    "bytes": 285680
+  },
+  {
+    "source": "kimono_design_seabed_4.jpg",
+    "output": "kimono_design_seabed_4.webp",
+    "bytes": 285192
+  },
+  {
+    "source": "kimono_design_seabed_5.jpg",
+    "output": "kimono_design_seabed_5.webp",
+    "bytes": 300710
+  },
+  {
+    "source": "kimono_design_seabed_6.jpg",
+    "output": "kimono_design_seabed_6.webp",
+    "bytes": 321666
+  },
+  {
+    "source": "kimono_design_seabed_7.jpg",
+    "output": "kimono_design_seabed_7.webp",
+    "bytes": 345280
+  },
+  {
+    "source": "kimono_design_seabed_main.png",
+    "output": "kimono_design_seabed_main.png",
+    "bytes": 266640,
+    "fallback": true
+  },
+  {
+    "source": "kimono_design_stripes_1.jpg",
+    "output": "kimono_design_stripes_1.webp",
+    "bytes": 361940
+  },
+  {
+    "source": "kimono_design_stripes_2.jpg",
+    "output": "kimono_design_stripes_2.webp",
+    "bytes": 325772
+  },
+  {
+    "source": "kimono_design_stripes_3.jpg",
+    "output": "kimono_design_stripes_3.webp",
+    "bytes": 368268
+  },
+  {
+    "source": "kimono_design_stripes_4.jpg",
+    "output": "kimono_design_stripes_4.webp",
+    "bytes": 346898
+  },
+  {
+    "source": "kimono_design_stripes_5.jpg",
+    "output": "kimono_design_stripes_5.webp",
+    "bytes": 368268
+  },
+  {
+    "source": "kimono_design_stripes_6.jpg",
+    "output": "kimono_design_stripes_6.webp",
+    "bytes": 310012
+  },
+  {
+    "source": "kimono_design_stripes_7.jpg",
+    "output": "kimono_design_stripes_7.webp",
+    "bytes": 325772
+  },
+  {
+    "source": "kimono_design_stripes_8.jpg",
+    "output": "kimono_design_stripes_8.webp",
+    "bytes": 316930
+  },
+  {
+    "source": "kimono_design_stripes_9.jpg",
+    "output": "kimono_design_stripes_9.webp",
+    "bytes": 292084
+  },
+  {
+    "source": "kimono_design_stripes_main.png",
+    "output": "kimono_design_stripes_main.png",
+    "bytes": 225350,
+    "fallback": true
+  }
+]

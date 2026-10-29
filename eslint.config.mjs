@@ -9,6 +9,13 @@ const eslintConfig = defineConfig([
   globalIgnores([
     // Default ignores of eslint-config-next:
     ".next/**",
+    // Playwright runs a second Next.js dev server with an isolated distDir.
+    ".next-playwright/**",
+    // Sprint 08V builds a production bundle in a third isolated distDir.
+    ".next-performance/**",
+    "artifacts/**",
+    // Read-only visual reference; it is not compiled or shipped with Ruseè.
+    "src_admin_ref/**",
     "out/**",
     "build/**",
     "next-env.d.ts",
