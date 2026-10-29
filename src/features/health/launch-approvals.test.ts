@@ -11,7 +11,7 @@ describe("launch approvals", () => {
 
   it("defaults every external approval to unapproved", () => {
     const approvals = launchApprovals({});
-    expect(approvals).toHaveLength(7);
+    expect(approvals).toHaveLength(8);
     expect(approvals.every((item) => !item.approved)).toBe(true);
     expect(launchApprovalsComplete({})).toBe(false);
     expect(approvals.every((item) => item.waitingEl.length > 0 && item.implementationEn.length > 0)).toBe(true);

@@ -32,7 +32,7 @@ jobs:
       - name: Build verified Papaki release
         shell: bash
         env:
-          DATABASE_URL: mysql://release_builder:release_builder@127.0.0.1:3306/release_builder
+          DATABASE_URL: mysql://release_builder:URL_ENCODED_PASSWORD@127.0.0.1:3306/release_builder
           APP_URL: https://rusee.gr
           ENABLE_FAKE_PAYMENTS: "false"
           MAINTENANCE_MODE: "false"

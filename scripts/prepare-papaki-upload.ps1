@@ -25,7 +25,7 @@ New-Item -ItemType Directory -Force -Path (Join-Path $Stage "scripts") | Out-Nul
 $ProductionScripts = @(
     "assign-optimized-kimono-images.mjs", "bootstrap-admin.mjs", "cpanel-start.cjs", "deploy-cpanel.sh", "deploy-plesk.sh",
     "check-production-site.mjs", "database-info.mjs", "migrate-database.mjs", "monitor-health.mjs", "plesk-start.cjs", "privacy-retention.mjs",
-    "prepare-standalone.mjs", "production-preflight.mjs", "release-expired-reservations.mjs", "repair-release-permissions.mjs", "run-automation-worker.mjs",
+    "prepare-standalone.mjs", "pre-bank-readiness-audit.mjs", "production-preflight.mjs", "release-expired-reservations.mjs", "repair-release-permissions.mjs", "run-automation-worker.mjs",
     "seed-information-pages.mjs"
 )
 foreach ($Script in $ProductionScripts) {

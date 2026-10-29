@@ -790,6 +790,14 @@ Acceptance criteria:
 - No action can manually mark an order paid, execute a provider refund, expose a secret or treat a browser return as payment evidence.
 - Focused unit tests and the complete owner-run quality gate pass through `scripts/sprint-08ax.ps1`.
 
+### [~] Sprint 08AY — Pre-bank launch closure
+
+Goal: close every production responsibility that does not require a contracted payment provider and produce one redacted, read-only owner handoff proving whether the bank is the only remaining blocker.
+
+Scope: production admin/owner evidence, catalogue and product-fact approvals, imported-demo isolation, seven published bilingual information pages, SMTP test evidence, active transactional templates, private worker freshness, clean automation/email/privacy queues, non-payment launch approvals, live HTTPS/liveness and secret-free standalone operational scripts. The audit never sends SMTP, changes production records, enables checkout, approves a business fact or contacts a provider.
+
+Acceptance: `scripts/sprint-08ay.ps1` passes locally; the reviewed release is deployed; the owner completes the admin and professional approvals in `PRE_BANK_OWNER_HANDOFF.md`; and the production audit ends with `Outcome: PRE-BANK READY`. `ENABLE_FAKE_PAYMENTS=false`, the fake provider remains non-executable in production and payment approval remains false until Sprint 09.
+
 ## [!] Sprint 09 — Contracted live payment provider
 
 Blocked by: merchant/provider selection, signed agreement, official current technical documentation, sandbox credentials, production credentials, HTTPS callbacks, and completed earlier hardening sprints.

@@ -155,6 +155,8 @@ Exit criteria: launch approval is evidence-based and includes a tested rollback 
 
 ## Immediate next task
 
+- [~] Verify Sprint 08AY pre-bank launch closure: deploy the secret-free worker/audit scripts, complete owner/admin catalogue, legal, fulfilment, imported-history and SMTP evidence, observe one healthy private worker, then require the production audit to report that the contracted bank provider is the only remaining blocker. No payment endpoint, credential or launch approval is invented by this sprint.
+
 - [x] Verify Sprint 08AX Admin commerce control room: consolidated order evidence, captured-payment fulfilment gate, valid return transitions, unmatched provider-event reconciliation and role-safe controls passed the owner-run focused diagnostics and complete gate on 2026-10-29. Live provider, SMTP, deployment and refund execution remain separate pending gates.
 
 - [x] Reorganize the protected admin navigation into five operational groups without deleting routes; Sprint 08A verification passed on 2026-08-20.

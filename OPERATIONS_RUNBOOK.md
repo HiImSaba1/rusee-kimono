@@ -12,10 +12,13 @@ This runbook is deliberately redacted. JetBackup/Plesk owns selectable restore p
 
 ## Scheduled Tasks
 
-Configure these in Plesk Scheduled Tasks with the absolute private application path:
+Configure exactly one private application worker in Plesk Scheduled Tasks. For the verified standalone release layout, run every five minutes:
 
-- Every 5 minutes: `npm run db:release-reservations:production`
-- Every 5 minutes after an alert destination is approved: `npm run monitor:health:production`
+- `cd /var/www/vhosts/sabaweb.gr/rusee.gr && node --env-file=.env.production.local .next/standalone/scripts/run-automation-worker.mjs`
+
+This one worker owns reservation release, email dispatch and operational notification synchronization. Do not run the older reservation-only task alongside it. After an alert destination is approved, the separate site monitor may run every five minutes without calling the automation endpoint:
+
+- `cd /var/www/vhosts/sabaweb.gr/rusee.gr && node --env-file=.env.production.local .next/standalone/scripts/check-production-site.mjs`
 - Privacy retention: keep disabled. Add a schedule only after legal approval and a reviewed dry run.
 
 Plesk should email task failures to the operator. Do not expose a public cron endpoint or put secrets in the task command.

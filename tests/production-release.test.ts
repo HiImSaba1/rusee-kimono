@@ -16,6 +16,7 @@ describe("Papaki/Plesk release contract", () => {
     expect(pkg.scripts["production:permissions:repair"]).toBe("node scripts/repair-release-permissions.mjs");
     expect(pkg.scripts["build:plesk"]).toBe("next build --webpack && node scripts/prepare-standalone.mjs");
     expect(pkg.scripts["production:standalone:prepare"]).toBe("node scripts/prepare-standalone.mjs");
+    expect(pkg.scripts["prebank:audit:production:private"]).toBe("node --env-file=.env.production.local scripts/pre-bank-readiness-audit.mjs");
     expect(pkg.scripts["db:info:production:private"]).toBe("node --env-file=.env.production.local scripts/database-info.mjs");
     expect(pkg.scripts["db:migrate:production:private"]).toBe("node --env-file=.env.production.local scripts/migrate-database.mjs");
     expect(pkg.scripts["content:initialize:production:private"]).toBe("node --env-file=.env.production.local scripts/seed-information-pages.mjs");
@@ -50,6 +51,8 @@ describe("Papaki/Plesk release contract", () => {
     expect(workflow).toContain("sha256sum -c");
     expect(workflow).toContain("kimono-home-group-dance.mp4");
     expect(workflow).toContain("next_kimono\\.sql");
+    expect(workflow).toContain("mysql://release_builder:URL_ENCODED_PASSWORD@127.0.0.1:3306/release_builder");
+    expect(workflow).not.toContain("mysql://release_builder:release_builder@");
     expect(builder).toContain("npm ci --legacy-peer-deps");
     expect(builder).toContain("npm run build:plesk");
     expect(builder).toContain('export NODE_ENV=production');
@@ -68,6 +71,7 @@ describe("Papaki/Plesk release contract", () => {
     expect(packager).toContain('"prepare-standalone.mjs"');
     expect(packager).toContain('"assign-optimized-kimono-images.mjs"');
     expect(packager).toContain('"check-production-site.mjs"');
+    expect(packager).toContain('"pre-bank-readiness-audit.mjs"');
     expect(packager).not.toContain('"seed-admin-demo.mjs"');
     expect(packager).not.toContain('"seed.mjs"');
     expect(packager).not.toContain('"verify-commerce-guards.mjs"');
@@ -124,5 +128,6 @@ describe("Papaki/Plesk release contract", () => {
     for (const key of ["HOSTING", "EMAIL_DNS", "TAX_SHIPPING", "LEGAL", "PRODUCT_DATA", "FULFILMENT", "PAYMENT_PROVIDER"]) {
       expect(template).toContain(`LAUNCH_${key}_APPROVED="false"`);
     }
+    expect(template).toContain('LAUNCH_IMPORTED_HISTORY_REVIEWED="false"');
   });
 });

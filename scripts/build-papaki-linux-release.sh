@@ -64,6 +64,9 @@ required_build_paths=(
   ".next/standalone/public"
   ".next/standalone/public/kimono_images_optimized/kimono-home-group-dance.mp4"
   ".next/standalone/public/kimono_images_optimized/kimono_design_grouped_1.webp"
+  ".next/standalone/scripts/run-automation-worker.mjs"
+  ".next/standalone/scripts/check-production-site.mjs"
+  ".next/standalone/scripts/pre-bank-readiness-audit.mjs"
 )
 
 for required_path in "${required_build_paths[@]}"; do
@@ -86,7 +89,8 @@ Built UTC: $timestamp
 Node: $(node --version)
 Build ID: $build_id
 
-This release contains the Plesk startup wrapper and traced standalone runtime.
+This release contains the Plesk startup wrapper, traced standalone runtime and
+the reviewed secret-free worker, liveness and pre-bank operational scripts.
 It contains no environment file, database snapshot, verification artifact, or
 source build workspace. Production environment and rollback remain Plesk-owned.
 EOF

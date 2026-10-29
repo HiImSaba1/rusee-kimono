@@ -32,6 +32,7 @@
     "production:preflight:private": "node --env-file=.env.production.local scripts/production-preflight.mjs",
     "production:permissions:repair": "node scripts/repair-release-permissions.mjs",
     "production:standalone:prepare": "node scripts/prepare-standalone.mjs",
+    "prebank:audit:production:private": "node --env-file=.env.production.local scripts/pre-bank-readiness-audit.mjs",
     "db:migrate:production:private": "node --env-file=.env.production.local scripts/migrate-database.mjs",
     "admin:bootstrap": "node --env-file=.env scripts/bootstrap-admin.mjs",
     "admin:bootstrap:production:private": "node --env-file=.env.production.local scripts/bootstrap-admin.mjs"
