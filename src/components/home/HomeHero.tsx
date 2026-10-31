@@ -42,7 +42,7 @@ export function HomeHero() {
     </video>
     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/65 via-transparent to-ink/10" />
     <div className="absolute inset-x-0 bottom-0 px-[var(--gutter)] pb-6 text-paper">
-      <div className="flex items-end justify-between gap-5"><p data-home-hero-copy className="max-w-xs text-sm leading-relaxed">A study in cloth, colour and the freedom of an open silhouette.</p><div data-home-hero-copy><LetterHoverLink href="/shop" trailingVisual={<ArrowDownRight className="size-4" />} className="gap-3 bg-ink px-6 py-4 text-xs uppercase tracking-[0.16em] text-paper">Discover the collection</LetterHoverLink></div></div>
+      <div className="flex items-end justify-between gap-2 sm:gap-5"><p data-home-hero-copy className="max-w-[45%] text-xs leading-relaxed sm:max-w-xs sm:text-sm">A study in cloth, colour and the freedom of an open silhouette.</p><div data-home-hero-copy><LetterHoverLink data-hero-cta href="/shop" trailingVisual={<ArrowDownRight className="size-3.5 sm:size-4" />} className="gap-2 bg-ink px-4 py-3 text-[.58rem] uppercase tracking-[0.11em] text-paper sm:gap-3 sm:px-6 sm:py-4 sm:text-xs sm:tracking-[0.16em]">Discover the collection</LetterHoverLink></div></div>
       <h1 data-home-hero-copy className="mt-5 font-display text-[clamp(6.5rem,24vw,26rem)] leading-[0.58] tracking-[-0.08em]">RUSEÈ</h1>
     </div>
   </section>;

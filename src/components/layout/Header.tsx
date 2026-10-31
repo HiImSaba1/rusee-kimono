@@ -17,6 +17,7 @@ const menuHoverImage = kimonoDesignModelImage(5, 1)!;
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const cart = useCart();
   const { locale, dictionary, setLocale } = useLocale();
   const nextLocale = locale === "en" ? "el" : "en";
@@ -56,18 +57,39 @@ export function Header() {
     return () => { document.documentElement.style.overflow = ""; };
   }, [open]);
 
+  useEffect(() => {
+    let previousY = window.scrollY;
+    let frame = 0;
+    const update = () => {
+      const currentY = window.scrollY;
+      const delta = currentY - previousY;
+      if (currentY <= 24 || delta < -6) setHidden(false);
+      else if (!open && currentY > 96 && delta > 6) setHidden(true);
+      previousY = currentY;
+      frame = 0;
+    };
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, [open]);
+
   return (
-    <header ref={root} className="fixed inset-x-0 top-0 z-[100] text-ink mix-blend-normal">
-      <div className={`relative z-[102] grid h-20 grid-cols-[1fr_auto_1fr] items-center border-b border-ink/15 px-[var(--gutter)] backdrop-blur-xl transition-colors duration-500 ${open ? "bg-paper-deep text-paper" : "bg-paper/75 text-ink"}`}>
-        <TransitionLink href="/" className="flex h-16 w-fit items-center" aria-label="Ruseè home">
-          <Image src="/rusee_logo_main_orig.jpg" alt="" width={368} height={275} priority sizes="96px" className="h-14 w-auto object-contain mix-blend-multiply" />
+    <header ref={root} className={`fixed inset-x-0 top-0 z-[100] text-ink mix-blend-normal transition-transform duration-700 ease-[cubic-bezier(.16,1,.3,1)] will-change-transform ${hidden && !open ? "-translate-y-full" : "translate-y-0"}`}>
+      <div className={`relative z-[102] grid h-16 grid-cols-[1fr_auto_1fr] items-center border-b border-ink/15 px-[var(--gutter)] backdrop-blur-xl transition-colors duration-500 sm:h-20 ${open ? "bg-paper-deep text-paper" : "bg-paper/75 text-ink"}`}>
+        <TransitionLink href="/" className="flex h-14 w-fit items-center sm:h-16" aria-label="Ruseè home">
+          <Image src="/rusee_logo_main_orig.jpg" alt="" width={368} height={275} priority sizes="96px" className="h-11 w-auto object-contain mix-blend-multiply sm:h-14" />
         </TransitionLink>
-        <button data-header-control onClick={() => setOpen((value) => !value)} aria-label={open ? dictionary.close : dictionary.menu} aria-expanded={open} aria-controls="site-menu" className="group relative flex h-10 cursor-pointer items-center gap-3 justify-self-center px-3 text-[0.68rem] uppercase tracking-[0.18em]">
+        <button data-header-control onClick={() => setOpen((value) => { const next = !value; if (next) setHidden(false); return next; })} aria-label={open ? dictionary.close : dictionary.menu} aria-expanded={open} aria-controls="site-menu" className="group relative flex h-10 cursor-pointer items-center gap-3 justify-self-center px-3 text-[0.68rem] uppercase tracking-[0.18em]">
             <span className="relative block h-3 w-5 transition-transform duration-500 ease-[cubic-bezier(.16,1,.3,1)] group-hover:rotate-180 group-focus-visible:rotate-180" aria-hidden="true"><i className={`absolute left-0 top-0 h-px w-5 bg-current transition-transform ${open ? "translate-y-[5px] rotate-45" : ""}`} /><i className={`absolute bottom-0 left-0 h-px w-5 bg-current transition-transform ${open ? "-translate-y-[6px] -rotate-45" : ""}`} /></span>
             <span className="relative hidden overflow-hidden leading-[1.15] sm:inline-grid"><span className="col-start-1 row-start-1 transition-transform duration-500 ease-[cubic-bezier(.16,1,.3,1)] group-hover:-translate-y-full group-focus-visible:-translate-y-full">{open ? dictionary.close : dictionary.menu}</span><span aria-hidden className="pointer-events-none absolute inset-0 translate-y-full transition-transform duration-500 ease-[cubic-bezier(.16,1,.3,1)] group-hover:translate-y-0 group-focus-visible:translate-y-0">{open ? dictionary.close : dictionary.menu}</span></span>
         </button>
         <div className="flex items-center gap-2 justify-self-end">
-          <button data-header-control data-no-translate type="button" onClick={switchLocale} onKeyDown={(event) => { if (event.key === "Enter") { event.preventDefault(); switchLocale(); } }} aria-label={`${dictionary.language}: ${nextLocale === "el" ? "Ελληνικά" : "English"}`} title={nextLocale === "el" ? "Ελληνικά" : "English"} className="flex h-10 items-center gap-2 px-3 text-xs uppercase tracking-[.12em]"><Languages className="size-4" strokeWidth={1.5}/><span>{nextLocale === "el" ? "GR" : "EN"}</span></button>
+          <button data-header-control data-no-translate type="button" onClick={switchLocale} onKeyDown={(event) => { if (event.key === "Enter") { event.preventDefault(); switchLocale(); } }} aria-label={`${dictionary.language}: ${nextLocale === "el" ? "Ελληνικά" : "English"}`} title={nextLocale === "el" ? "Ελληνικά" : "English"} className="flex h-10 items-center gap-1.5 px-3 text-[.68rem] uppercase tracking-[.1em] sm:gap-2 sm:text-xs sm:tracking-[.12em]"><Languages className="size-3.5 sm:size-4" strokeWidth={1.5}/><span>{nextLocale === "el" ? "GR" : "EN"}</span></button>
           <button data-header-control onClick={() => cart.setOpen(true)} aria-label={`${dictionary.bag} ${cart.count}`} className="group relative flex h-10 items-center gap-2 px-4 text-[0.68rem] uppercase tracking-[0.18em]"><span className="relative hidden sm:block">{dictionary.bag}</span><ShoppingBag className="relative size-4" strokeWidth={1.5}/><span className="absolute -right-3 -top-3 flex size-6 items-center justify-center rounded-full bg-ink font-mono text-xs font-bold leading-none text-paper ring-2 ring-paper">{cart.count}</span></button>
         </div>
       </div>

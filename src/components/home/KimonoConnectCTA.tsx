@@ -17,9 +17,9 @@ export function KimonoConnectCTA() {
       </div>
 
       <div className="relative mx-auto w-full max-w-5xl text-center">
-        <Reveal className="relative z-30"><p className="eyebrow">Begin with a feeling</p><h2 className="font-display text-[clamp(6rem,15vw,17rem)] leading-[.68] tracking-[-.08em]">Find your<br/>Ruseè.</h2></Reveal>
-        <div className="relative z-10 mx-auto -mt-[clamp(2.5rem,5vw,5rem)] w-[min(68%,24rem)]"><ParallaxImage src={centre} alt="Ruseè kimono collection" sizes="(min-width:1024px) 24rem, 68vw" className="aspect-[3/4]" speed={8}/></div>
-        <Reveal className="relative z-20 -mt-5 flex justify-center"><LetterHoverLink href="/shop" trailingVisual={<ArrowUpRight className="size-4"/>} className="gap-3 px-7 py-5 text-xs uppercase tracking-[.16em]">Explore the collection</LetterHoverLink></Reveal>
+        <Reveal className="relative z-30"><p className="eyebrow">Begin with a feeling</p><h2 className="mt-2 font-display text-[3.15rem] leading-[.78] tracking-[-.065em] sm:text-[4.5rem] lg:mt-0 lg:text-[clamp(6rem,15vw,17rem)] lg:leading-[.68] lg:tracking-[-.08em]">Find your<br/>Ruseè.</h2></Reveal>
+        <div className="relative z-10 mx-auto mt-5 w-[min(68%,24rem)] lg:-mt-[clamp(2.5rem,5vw,5rem)]"><ParallaxImage src={centre} alt="Ruseè kimono collection" sizes="(min-width:1024px) 24rem, 68vw" className="aspect-[3/4]" speed={8}/></div>
+        <Reveal className="relative z-20 mt-6 flex justify-center"><LetterHoverLink href="/shop" trailingVisual={<ArrowUpRight className="size-4"/>} className="gap-2.5 px-5 py-3.5 text-[.68rem] uppercase tracking-[.14em] sm:gap-3 sm:px-7 sm:py-5 sm:text-xs sm:tracking-[.16em]">Explore the collection</LetterHoverLink></Reveal>
       </div>
 
       <div className="hidden lg:block"><ParallaxImage src={right} alt="Ruseè kimono styled in daylight" sizes="18vw" className="aspect-[3/4]" speed={6}/></div>

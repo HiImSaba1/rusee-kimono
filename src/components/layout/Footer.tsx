@@ -17,21 +17,21 @@ export function Footer() {
   }, { scope: root });
 
   return (
-    <footer ref={root} data-site-footer className="sticky bottom-0 z-0 min-h-0 overflow-hidden bg-paper-deep px-[var(--gutter)] pb-6 pt-10 text-paper sm:pt-12">
-      <div className="grid grid-cols-2 gap-x-[clamp(1.25rem,6vw,8rem)] border-t border-paper/25 pt-6 sm:pt-7 lg:grid-cols-12 lg:gap-x-8 xl:gap-x-14">
-        <nav data-footer-item aria-label="Footer navigation" className="col-start-1 row-start-1 flex min-w-0 flex-col items-start gap-1.5 lg:col-span-3 lg:col-start-6">
-          {navigation.map((item) => <LetterHoverLink key={item.href} href={item.href} className="font-display text-[clamp(1.55rem,3vw,2.65rem)] leading-[1]">{item.label}</LetterHoverLink>)}
+    <footer ref={root} data-site-footer className="sticky bottom-0 z-0 min-h-0 overflow-hidden bg-paper-deep px-[var(--gutter)] pb-4 pt-6 text-paper sm:pb-6 sm:pt-12">
+      <div className="grid grid-cols-2 gap-x-5 border-t border-paper/25 pt-5 sm:gap-x-[clamp(1.25rem,6vw,8rem)] sm:pt-7 lg:grid-cols-12 lg:gap-x-8 xl:gap-x-14">
+        <nav data-footer-item aria-label="Footer navigation" className="col-start-1 row-start-1 flex min-w-0 flex-col items-start gap-1 lg:col-span-3 lg:col-start-6 lg:gap-1.5">
+          {navigation.map((item) => <LetterHoverLink key={item.href} href={item.href} className="font-display text-[1.15rem] leading-[1.05] sm:text-[clamp(1.55rem,3vw,2.65rem)] sm:leading-[1]">{item.label}</LetterHoverLink>)}
         </nav>
 
-        <div data-footer-item className="col-start-1 row-start-2 mt-10 min-w-0 sm:mt-14 lg:col-span-5 lg:col-start-1 lg:row-start-1 lg:mt-0">
+        <div data-footer-item className="col-span-2 col-start-1 row-start-2 mt-7 min-w-0 sm:col-span-1 sm:mt-14 lg:col-span-5 lg:col-start-1 lg:row-start-1 lg:mt-0">
           <p className="eyebrow text-paper/55">Letters from the studio</p>
-          <h2 className="mt-4 max-w-xl font-display text-[clamp(2rem,5vw,5.5rem)] leading-[0.9] tracking-[-0.05em]">Stories of colour,<br />cloth and movement.</h2>
+          <h2 className="mt-3 max-w-xl font-display text-[1.8rem] leading-[0.92] tracking-[-0.04em] sm:mt-4 sm:text-[clamp(2rem,5vw,5.5rem)] sm:leading-[0.9] sm:tracking-[-0.05em]">Stories of colour,<br />cloth and movement.</h2>
           <NewsletterForm />
         </div>
 
-        <div className="col-start-2 row-span-2 row-start-1 min-w-0 text-sm text-right lg:col-span-4 lg:col-start-9 lg:row-span-1">
-          <nav data-footer-item aria-label="Information" className="flex flex-col items-end gap-1.5">
-            <p className="eyebrow mb-2 text-paper/55">Information</p>
+        <div className="col-start-2 row-start-1 min-w-0 text-right text-[.7rem] leading-tight sm:row-span-2 sm:text-sm lg:col-span-4 lg:col-start-9 lg:row-span-1">
+          <nav data-footer-item aria-label="Information" className="flex flex-col items-end gap-1 sm:gap-1.5">
+            <p className="eyebrow mb-1 text-paper/55 sm:mb-2">Information</p>
             <LetterHoverLink href="/privacy-policy">Privacy policy</LetterHoverLink>
             <LetterHoverLink href="/cookies">Cookies</LetterHoverLink>
             <LetterHoverLink href="/terms">Terms</LetterHoverLink>
@@ -40,19 +40,20 @@ export function Footer() {
             <LetterHoverLink href="/payment-methods">Payments</LetterHoverLink>
             <LetterHoverLink href="/care-guide">Care & fit</LetterHoverLink>
           </nav>
-          <div data-footer-item className="mt-10 sm:mt-14">
+          <div data-footer-item className="mt-6 sm:mt-14">
             <a href={`mailto:${site.email}`} className="break-words border-b border-paper/35 pb-1">{site.email}</a>
-            <p className="pt-5 text-paper/55">{site.location}<br />Shipping worldwide</p>
-            <div className="flex flex-col items-end gap-1.5 pt-5 uppercase tracking-[0.14em] sm:flex-row sm:justify-end sm:gap-4"><a href="#">Instagram</a><a href="#">Pinterest</a></div>
+            <p className="pt-3 text-paper/55 sm:pt-5">{site.location}<br />Shipping worldwide</p>
+            <div className="flex flex-col items-end gap-1 pt-3 uppercase tracking-[0.12em] sm:flex-row sm:justify-end sm:gap-4 sm:pt-5 sm:tracking-[0.14em]"><a href="#">Instagram</a><a href="#">Pinterest</a></div>
           </div>
         </div>
       </div>
-      <div className="mt-[clamp(2.5rem,7vh,5.5rem)] flex items-end justify-between border-b border-paper/25 pb-3">
-        <p data-footer-title role="img" aria-label="RUSEÈ" className="overflow-visible py-[0.1em] font-display text-[clamp(4.5rem,14vw,13rem)] leading-[1.2em] tracking-[-0.065em]">RUSEÈ</p>
-        <span data-footer-item className="mb-1 text-[0.62rem] uppercase tracking-[0.18em]">Kimono study Nº 01</span>
+      <div className="mt-8 flex items-end justify-between border-b border-paper/25 pb-2 sm:mt-[clamp(2.5rem,7vh,5.5rem)] sm:pb-3">
+        <p data-footer-title role="img" aria-label="RUSEÈ" className="overflow-visible py-[0.1em] font-display text-[3.75rem] leading-[1em] tracking-[-0.055em] sm:text-[clamp(4.5rem,14vw,13rem)] sm:leading-[1.2em] sm:tracking-[-0.065em]">RUSEÈ</p>
+        <span data-footer-item className="mb-1 max-w-24 text-right text-[0.5rem] uppercase tracking-[0.13em] sm:max-w-none sm:text-[0.62rem] sm:tracking-[0.18em]">Kimono study Nº 01</span>
       </div>
-      <div className="mt-4 text-[0.72rem] uppercase tracking-[0.14em] text-paper/50">
+      <div className="mt-3 flex items-center justify-between gap-4 text-[0.58rem] uppercase tracking-[0.11em] text-paper/50 sm:mt-4 sm:text-[0.72rem] sm:tracking-[0.14em]">
         <span>© {new Date().getFullYear()} Ruseè</span>
+        <a href="https://sabaweb.gr" target="_blank" rel="noreferrer" className="text-right transition-colors hover:text-paper focus-visible:text-paper">Made by Sabaweb Solutions</a>
       </div>
     </footer>
   );

@@ -35,12 +35,12 @@ export function ShopDesignGrid({ designs, colours, locale }: { designs: Option[]
           {greek ? "Περάστε πάνω από κάθε μελέτη για να δείτε πώς ζει το σχέδιο πάνω στο σώμα. Κάθε κιμονό έχει το δικό του σχέδιο και χρώμα· εσείς επιλέγετε το μέγεθος." : "Hover each study to see how the design lives on the body. Every kimono owns its design and colour; you choose the size."}
         </p>
       </div>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid grid-cols-2 gap-2.5 sm:gap-4 md:grid-cols-2 xl:grid-cols-3">
         {cards.map((card) => (
           <Link
             key={card.index}
             href={`/shop/${encodeURIComponent(card.design.slug)}`}
-            className="shop-design-card group border border-ink/20 bg-[#e9e7e1] p-3 transition-colors hover:bg-[#dedbd3]"
+            className={`shop-design-card group border border-ink/20 bg-[#e9e7e1] p-2 transition-colors hover:bg-[#dedbd3] sm:p-3 ${card.index < 2 ? "col-span-1" : "col-span-2 md:col-span-1"}`}
           >
             <div className="relative aspect-[3/4] overflow-hidden border border-ink/10 bg-paper">
               <ParallaxImage src={card.primary} alt={greek ? `Μελέτη σχεδίου κιμονό ${card.name}` : `${card.name} kimono design study`} sizes="(min-width:1280px) 33vw,(min-width:768px) 50vw,100vw" className="absolute inset-0" imageClassName="shop-design-card__primary object-cover" speed={6} />
@@ -48,12 +48,12 @@ export function ShopDesignGrid({ designs, colours, locale }: { designs: Option[]
                 <ParallaxImage src={card.secondary} alt={greek ? `Γυναίκα φορά το κιμονό ${card.name}` : `Woman wearing the ${card.name} kimono`} loading={card.index < 3 ? "eager" : "lazy"} fetchPriority={card.index < 3 ? "high" : "auto"} sizes="(min-width:1280px) 33vw,(min-width:768px) 50vw,100vw" className="h-full w-full" imageClassName="shop-design-card__alternate-image object-cover" speed={6} />
               </span>
             </div>
-            <div className="flex items-end justify-between gap-4 border-t border-ink/15 px-1 pb-1 pt-4">
-              <div>
-                <p className="font-mono text-base uppercase tracking-[.12em] text-ink/70">{greek ? "Μελέτη" : "Study"} {String(card.index + 1).padStart(2, "0")} &middot; {greek ? (colourNames[card.colour.name] ?? card.colour.name) : card.colour.name}</p>
-                <h2 className="mt-3 overflow-visible py-[.1em] font-display text-4xl tracking-[-.04em]">{card.name}</h2>
+            <div className="flex flex-col items-start gap-3 border-t border-ink/15 px-1 pb-1 pt-3 sm:flex-row sm:items-end sm:justify-between sm:gap-4 sm:pt-4">
+              <div className="min-w-0">
+                <p className="font-mono text-[.58rem] uppercase tracking-[.1em] text-ink/70 sm:text-base sm:tracking-[.12em]">{greek ? "Μελέτη" : "Study"} {String(card.index + 1).padStart(2, "0")} &middot; {greek ? (colourNames[card.colour.name] ?? card.colour.name) : card.colour.name}</p>
+                <h2 className="mt-2 overflow-visible py-[.1em] font-display text-[1.65rem] tracking-[-.04em] sm:mt-3 sm:text-4xl">{card.name}</h2>
               </div>
-              <span className="pb-1 text-sm uppercase tracking-[.12em]">{greek ? "Προβολή" : "View"}</span>
+              <span className="inline-flex min-h-9 items-center justify-center rounded-full border border-ink bg-ink px-3 py-2 text-[.58rem] uppercase tracking-[.1em] text-paper transition-[background-color,color] duration-500 ease-[cubic-bezier(.16,1,.3,1)] group-hover:bg-paper group-hover:text-ink sm:mb-1 sm:min-h-11 sm:px-5 sm:text-xs sm:tracking-[.12em]">{greek ? "Προβολή" : "View"}</span>
             </div>
           </Link>
         ))}

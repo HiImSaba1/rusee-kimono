@@ -130,6 +130,29 @@ button, input, textarea { font: inherit; }
   color: var(--ink) !important;
 }
 
+@media (max-width: 639px) {
+  [data-public-site] button:not([aria-label]):not([data-structural-control]),
+  [data-public-site] a[class*="px-"][class*="uppercase"]:not([data-structural-control]),
+  [data-button-reveal] {
+    font-size: .62rem;
+    gap: .45rem;
+    min-height: 2.25rem;
+    padding: .7rem 1rem;
+  }
+
+  [data-hero-cta] {
+    font-size: .58rem !important;
+    letter-spacing: .08em;
+    padding-inline: .8rem !important;
+    white-space: nowrap;
+  }
+
+  [data-header-control] {
+    min-height: 2.25rem;
+    padding-inline: .85rem !important;
+  }
+}
+
 :where(form label):has(:is(input, select, textarea):required)::before {
   content: "*";
   display: inline-block;
