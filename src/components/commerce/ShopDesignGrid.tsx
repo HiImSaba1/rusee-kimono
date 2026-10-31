@@ -40,12 +40,12 @@ export function ShopDesignGrid({ designs, colours, locale }: { designs: Option[]
           <Link
             key={card.index}
             href={`/shop/${encodeURIComponent(card.design.slug)}`}
-            className={`shop-design-card group border border-ink/20 bg-[#e9e7e1] p-2 transition-colors hover:bg-[#dedbd3] sm:p-3 ${card.index < 2 ? "col-span-1" : "col-span-2 md:col-span-1"}`}
+            className="shop-design-card group col-span-1 border border-ink/20 bg-[#e9e7e1] p-2 transition-colors hover:bg-[#dedbd3] sm:p-3"
           >
             <div className="relative aspect-[3/4] overflow-hidden border border-ink/10 bg-paper">
-              <ParallaxImage src={card.primary} alt={greek ? `Μελέτη σχεδίου κιμονό ${card.name}` : `${card.name} kimono design study`} sizes="(min-width:1280px) 33vw,(min-width:768px) 50vw,100vw" className="absolute inset-0" imageClassName="shop-design-card__primary object-cover" speed={6} />
+              <ParallaxImage src={card.primary} alt={greek ? `Μελέτη σχεδίου κιμονό ${card.name}` : `${card.name} kimono design study`} sizes="(min-width:1280px) 33vw,50vw" className="absolute inset-0" imageClassName="shop-design-card__primary object-cover" speed={6} />
               <span className="shop-design-card__alternate absolute inset-0">
-                <ParallaxImage src={card.secondary} alt={greek ? `Γυναίκα φορά το κιμονό ${card.name}` : `Woman wearing the ${card.name} kimono`} loading={card.index < 3 ? "eager" : "lazy"} fetchPriority={card.index < 3 ? "high" : "auto"} sizes="(min-width:1280px) 33vw,(min-width:768px) 50vw,100vw" className="h-full w-full" imageClassName="shop-design-card__alternate-image object-cover" speed={6} />
+                <ParallaxImage src={card.secondary} alt={greek ? `Γυναίκα φορά το κιμονό ${card.name}` : `Woman wearing the ${card.name} kimono`} loading={card.index < 3 ? "eager" : "lazy"} fetchPriority={card.index < 3 ? "high" : "auto"} sizes="(min-width:1280px) 33vw,50vw" className="h-full w-full" imageClassName="shop-design-card__alternate-image object-cover" speed={6} />
               </span>
             </div>
             <div className="flex flex-col items-start gap-3 border-t border-ink/15 px-1 pb-1 pt-3 sm:flex-row sm:items-end sm:justify-between sm:gap-4 sm:pt-4">
